@@ -40,3 +40,14 @@
   
 //   console.log(someUsers); // 2
   
+// const arr = []
+
+// function foo() {
+//     arr.push(1)
+//     arr.push(6)
+//     arr.push(5)
+//     arr.push(1, 2, 3)
+// }
+// foo()
+
+// console.log(arr)

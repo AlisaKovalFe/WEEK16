@@ -81,7 +81,39 @@
 // // console.log(arr)
 // arr[2]()
 
-let arr = ['a', 'b', 'c']
-arr.forEach(function(item, index, array) {
-    console.log(item,index,array)
-  });
+// let arr = ['a', 'b', 'c']
+// arr.forEach(function(item, index, array) {
+//     console.log(item,index,array)
+//   });
+
+// const arr = []
+
+// function foo(start) {
+//   for (let i = start; i <= 10; i += 2) {
+//     arr.push(i)
+//   }
+//   return arr
+// }
+
+// // const foo = () => {
+// //   for (let i = 2; i <= 10; i += 2) {
+// //     arr.push(i)
+// //   }
+// //   return arr
+// // }
+
+// console.log(foo(2))
+
+
+
+const arr = []
+
+function foo() {
+    arr.push(1)
+    arr.push(2)
+    arr.push(3)
+    arr.push(1, 2, 3)
+}
+foo()
+
+console.log(arr)

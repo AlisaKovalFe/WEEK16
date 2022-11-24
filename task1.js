@@ -2,25 +2,11 @@
 
 const arr = []
 
-// function foo() {
-//     let val = document.getElementById('input').value;
-//     document.getElementById('result').innerHTML = val
-//     // document.getElementById('input').innerHTML = ''
-//     for (let i = document.getElementById('input').value; i < arr.length; i++) {
-
-//             console.log(i)
-//             arr.push(i)
-//             console.log(arr.push(i))
-//         }
-//         return arr
-// }
-// foo()
-
 function foo() {
     let buttonInputNumber =  document.querySelector('.buttonInputNumber') 
 
     function inputSave() {
-        let val = document.getElementById('input').value;
+        let val = document.getElementById('input1').value;
         if (Number(val)) {
             document.getElementById('result').innerHTML = val
         } else {
@@ -35,80 +21,53 @@ function foo() {
         let start = ''
         for (let i = 0; i <arr.length; i++) {
             start += arr[i] + ' '
-            console.log(i)
         }
-        // console.log(start)
+        // console.log(arr)
         document.getElementById('resultMassiv').innerHTML = start
     }
 
 
     function clear() {
-        let val = document.getElementById('input').value;
+        let val = document.getElementById('input1').value;
         if (val !== '') {
-            document.getElementById('input').value = '';
+            document.getElementById('input1').value = '';
         }
-    }
-    // function saveinMassiv() {
-        
-    //     for (let i = document.getElementById('input').value; i < arr.length; i++) {
-    //         arr.push(i)
-    //         console.log(arr.push(i))
-    //     }
-    //     return arr
-        
-
-    // }
-    
-    function ready() {
-        // console.log(arr)
     }
 
     buttonInputNumber.addEventListener('click', inputSave)
     buttonInputNumber.addEventListener('click', clear)
     buttonInputNumber.addEventListener('click', resultMassiv)
-    
-    let buttonReady = document.querySelector('.buttonReady')
-    buttonReady.addEventListener('click', ready)
-    
-    
-    // buttonInputNumber.addEventListener('click', saveinMassiv)
-
-    
-
-
-    
-    // let arr = []
-    // for (let num of arr) {
-    //     arr.push(num)
-    // }
-
-    // let sum = 0
-    // let numbers = []
-    // while (true) {
-    //     let value = +prompt('number?', 'num')
-    //     if (!value) break
-    //     numbers.push(value)
-    //     // sum += value
-    // }
-    // console.log(numbers)
-    // alert(sum)
 }
 foo()
 
 function goo() {
     let button = document.querySelector('.buttonReady')
     
-    function color() {
-        // button.style.backgroundColor = 'red'
+    function sort() {
+        let sortMassiv = ' '
+        for (let i = 0; i <arr.length; i++) {
+            sortMassiv = arr.sort() + ''
+        }    
         console.log(arr)
+        document.getElementById('sortMassiv').innerHTML = sortMassiv // здесь нет пробелов, а запятые        
     }
 
-    button.addEventListener('click', color)
-    
+    function sum() {
+        let sum = 0 
+        for (let i = 0; i <arr.length; i++) {
+            sum += Number(arr[i])
+        } 
+        document.getElementById('sum').innerHTML = sum
+    }
+
+    button.addEventListener('click', sort)
+    button.addEventListener('click', sum)    
 }
 goo()
 
 
+
+// experiments
 // function sumInput() {
     // let numbers = []
     

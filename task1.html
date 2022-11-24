@@ -7,16 +7,23 @@
     <title>Task1</title>
 
     <style>
-        #result {
-            border: 1px solid red;
-            width: 5rem;
+        .inner {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            margin-right: 1rem;
+            width: 10rem;
             height: 2rem;
+            color: darkgray;
+            border: 1px solid blue;
         }
 
-        #resultMassiv {
-            border: 1px solid blue;
-            width: 5rem;
-            height: 2rem;
+        .external {
+            display: flex;
+            
+        }
+
+        input {
+            width: 21rem;
         }
 
     </style>
@@ -24,12 +31,21 @@
 
 
 <body>
-    <input id="input" type="text"  >
-    <button class="buttonInputNumber" >Ввести значения</button>
-    
-    <button class="buttonReady"  type="button" >Готово</button>
-    <div id="result"></div>
-    <div id="resultMassiv"></div>
+    <input id="input1" type="text"  >
+    <div class="external">
+        <div>
+            
+            <div class="inner" id="result">Результат ввода значения</div>
+            <div class="inner" id="resultMassiv">Массива</div>
+            <button class="buttonInputNumber" >Ввести значения</button>
+        </div>
+        
+        <div>
+            <div class="inner" id="sortMassiv">Отсортированный массив</div>
+            <div class="inner" id="sum">Сумма эл. массива</div>
+            <button class="buttonReady" type="button" >Готово</button>
+        </div>
+    </div>
     
 
     <script src="task1.js"></script>

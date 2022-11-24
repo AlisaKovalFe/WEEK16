@@ -63,7 +63,9 @@ function calculate() {
     inp.setAttribute('name', 'fuel')
     inp.setAttribute('type', 'radio')
         lala = document.querySelector('#lala')
-        lala.insertAdjacentHTML('afterend', '<input>Пока</input>');
+        // lala.insertAdjacentHTML('afterend', '<input>Пока</input>');
+        lala.append(inp)
+        // inp.remove()
         
         // document.body.append(inp)
         console.log(radioFuel)

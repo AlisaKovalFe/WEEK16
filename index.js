@@ -106,14 +106,41 @@
 
 
 
-const arr = []
+// const arr = []
 
-function foo() {
-    arr.push(1)
-    arr.push(2)
-    arr.push(3)
-    arr.push(1, 2, 3)
-}
-foo()
+// function foo() {
+//     arr.push(1)
+//     arr.push(2)
+//     arr.push(3)
+//     arr.push(1, 2, 3)
+// }
+// foo()
 
-console.log(arr)
+// console.log(arr)
+
+
+
+// пример из codewars
+// function isPythagoreanTriple(a, b, c) {
+  
+//     if( a > c ) {
+//       let buf = c;
+//       c = a;
+//       a = buf;
+//     }
+//     if( b > c ) {
+//       let buf = c;
+//       c = b;
+//       b = buf;
+//     }
+     
+//     if (a**2 + b**2 == c**2) {
+//       return true
+//     } else {
+//       return false
+//     }
+//   }
+  
+//   console.log(isPythagoreanTriple(5,4,3))
+
+  

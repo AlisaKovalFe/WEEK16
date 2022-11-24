@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .wrap-item {
+            display: flex;
+            margin-bottom: 1rem;
+        }
+
+        label {
+            width: 15rem;
+        }
+
+        .wrap {
+            display: flex;
+            flex-direction: column;
+            width: 50rem;
+            height: max-content;
+            background-color: cadetblue;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .wrap-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        button {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            width: 10rem;
+            align-self: center;
+        }
+
+        #result {
+            border: 1px solid blue;
+            margin-bottom: 4rem;
+            width: 10rem;
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <div class="wrap">
+        <div class="wrap-form">
+            <h1>Калькулятор стоимости авто</h1>
+
+            <!-- <div class="wrap-item">
+                <label for="">Цена на ауционе</label>
+                <input type="text">
+            </div> -->
+
+            <div class="wrap-item">
+                <label for="mark">Марка</label>
+                <select  >
+                    <option id="mark" name="mark" value="100">Лада</option>
+                    <option name="mark" value="500">Мерседес</option>
+                    <option name="mark" value="300">Вольво</option>
+                    <option name="mark" value="600">БМВ</option>
+                </select>        
+            </div>
+
+            <div class="wrap-item">
+                <label for="model">Модель</label>
+                <select name="model" id="model" >
+                    
+                    <option  name="model" value="1">Лада1</option>
+                    <option   name="model" value="2">Лада2</option>
+                    <option  name="model" value="3">Мерседес1</option>
+                    <option  name="model" value="4">Мерседес2</option>
+                    <option  name="model" value="1">Вольво1</option>
+                    <option  name="model" value="2">Вольво2</option>
+                    <option  name="model" value="3">БМВ1</option>
+                    <option id="hide"  name="model" value="4">БМВ2</option>
+                </select>        
+            </div>
+
+            <div class="wrap-item">
+                <label for="engine">Объем двигателя</label>
+                <input id="engine" type="text">
+            </div>
+
+            <div class="wrap-item">
+                <label for="age">Возраст автомобиля</label><br>
+                <div>
+                    <input value="1.5" name="age" id="age" type="radio" >меньше 3х лет<br>
+                    <input value="1" name="age" type="radio">от 3 до 5 лет<br>
+                    <input value="0.7" name="age" type="radio">от 5 до 7 лет<br>
+                    <input value="0.5" name="age" type="radio">больше 7 лет<br>
+                </div>
+            </div>
+
+
+            <!-- <div class="wrap-item">
+                <label for="">Пробег</label>
+                <input type="text">
+            </div> -->
+
+            <div class="wrap-item">
+                <label for="fuel">Тип топлива</label><br>
+                <div id="lala">
+                    <input value="1" name="fuel" id="fuel" type="radio" >бензин<br>
+                    <input value="1.3" name="fuel" type="radio" >дизель<br>
+                    <input value="1.5" name="fuel" type="radio">электрический<br>
+                </div>
+            </div>
+
+            <div class="wrap-item">
+                <label for="extra">Дополнительно</label><br>
+                <div>
+                    <input value="2" name="owner" id="extra" type="checkbox" >1 владелец<br>
+                    <input value="2.5" name="unbeaten" type="checkbox" >небитая<br>
+                    
+                </div>
+            </div>
+
+            <button>Рассчитать</button>
+            <div id="result">Результат</div>
+            
+        </div>
+    </div>
+    
+
+    <script src="task2.js"></script>
+</body>
+</html>

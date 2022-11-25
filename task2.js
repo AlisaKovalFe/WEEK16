@@ -1,3 +1,4 @@
+// Элементы страницы
 const button = document.querySelector('button')
 
 // Элементы форма
@@ -10,10 +11,7 @@ const result = document.querySelector('#result')
 //Options
 let marks = document.querySelectorAll('option[name="mark"]')
 let models = document.querySelectorAll('option[name="model"]')
-// console.log(marks)
-// console.log(models)
-
-
+let modelsSelect = document.querySelector('#sel')
 
 // Радиокнопки
 const radioFuel = document.querySelectorAll('input[name ="fuel"]')
@@ -21,14 +19,10 @@ const radioAge = document.querySelectorAll('input[name="age"]')
 
 //Чекбоксы
 const owner = document.querySelector('input[name="owner"]')
-// console.log(owner)
 const unbeaten = document.querySelector('input[name="unbeaten"]')
-// console.log(unbeaten)
 
 
-
-const startPrice = 1
-// let totalPrice 
+const startPrice = 1 
 
 function calculate() {
     let totalPrice = startPrice 
@@ -37,12 +31,10 @@ function calculate() {
     for (const option of marks) {
         if (option.selected) {
             totalPrice = totalPrice * parseFloat(option.value) 
-            // console.log(totalPrice)
         }
     }
 
-
-    for (const option of models) {
+    for (const option of modelsSelect) {
         if (option.selected) {
             totalPrice = totalPrice * parseFloat(option.value) 
         }
@@ -51,27 +43,10 @@ function calculate() {
     for (let i = 0; i < radioFuel.length; i++) {
         if (radioFuel[i].checked) {
             totalPrice *= parseFloat(radioFuel[i].value) 
-        }
-        
-        // let rad = document.createElement("input")
-        // rad.innerText = 'lolo'
-        // input.add('rad')
+        }        
     }
-    
-    
-    let inp = document.createElement('input');
-    inp.setAttribute('name', 'fuel')
-    inp.setAttribute('type', 'radio')
-        lala = document.querySelector('#lala')
-        // lala.insertAdjacentHTML('afterend', '<input>Пока</input>');
-        lala.append(inp)
-        // inp.remove()
-        
-        // document.body.append(inp)
-        console.log(radioFuel)
-        
-    
 
+    // другой спопосб прохождения по массиву оставила для себя
     // for (const radio of radioFuel) {
     //     if (radio.checked) {
     //         totalPrice *= parseFloat(radio.value) 
@@ -102,61 +77,73 @@ function calculate() {
         let mult = 1.5
         totalPrice = totalPrice * mult
     } else {
-        document.querySelector('#engine').value = 'обязательно введите число'
+        document.querySelector('#engine').value = ''
     }
     
+    
+    // для себя эксперимет оставила
+    // let inputFuel = document.createElement('input');
+    // inputFuel.setAttribute('name', 'fuel')
+    // inputFuel.setAttribute('type', 'radio')
+    // // inp.innerHTMl = "hi" - не работает, в инпут нет иннер
+    // wrapFuel = document.querySelector('#wrapFuel') // через id все понял
+    // // lala.insertAdjacentHTML('afterend', '<input>Пока</input>');
+    // wrapFuel.append(inputFuel)
+    
+
+    // оставила для себя и скрыла послденюю модель бмв
     // hide.hidden = true
-    result.innerHTML = totalPrice
+
+
+    // if (document.querySelector('#sel').options.selectedIndex == 1)
+    // let selectedOption = sel.options[sel.selectedIndex]
+    // console.log(selectedOption)
+    // console.log(selectedOption.value)
+    // console.log(selectedOption.text)
+
+
+    const formatter = new Intl.NumberFormat('ru');
+    
+
+    result.innerText = formatter.format(totalPrice)
     console.log(totalPrice)
 }
 
-// 
+function optionSelect() {
+        sel.remove(sel[0])
+        sel.remove(sel[1])
+        sel.remove(sel[2])
+    if (marks[0].selected) {
+        let newOptionMers1 = new Option ('Lada1', '0.5')
+        sel.append(newOptionMers1)
+        let newOptionMers2 = new Option ('Lada2', '0.8')
+        sel.append(newOptionMers2)
+    }
+    if (marks[1].selected) {
+        let newOptionMers1 = new Option ('Mercedes1', '1.5')
+        sel.append(newOptionMers1)
+        let newOptionMers2 = new Option ('Mercedes2', '1.8')
+        sel.append(newOptionMers2)
+        let newOptionMers3 = new Option ('Mercedes3', '2')
+        sel.append(newOptionMers3)
+    }
 
-// function modelSelect() {
-//     document.querySelector('#hide')
-//     hide.hidden = true
-//     // document.querySelectorAll('option[name="model"]')
-//     // let rad = document.createElement("option")
-//     // rad.text = 'lolo'
-//     // option.add('rad')
-//     // if (marks[0].selected) {
-//     //     // let models = document.querySelectorAll('option[name="model"]')
-//     //     // let opt1 = document.createElement('option')
-//     //     // models.append(opt1)
-        
-//     //     let arr = []
-//     //     let models = ''
-//     //     arr.push('lada3', 'lada2')
-        
-//     //     // for (let i = 0; i < arr.length; i++) {
-//     //     //     models = arr
+    if (marks[2].selected) {
+        let newOptionMers1 = new Option ('Volvo1', '1')
+        sel.append(newOptionMers1)
+        let newOptionMers2 = new Option ('Volvo2', '1.2')
+        sel.append(newOptionMers2)
+    }
 
-//     //     //     // let opt1 = document.createElement('option')
-//     //     //     // models.append(opt1)
-//     //     // }
-//     //     // console.log(arr)
-//     //     console.log(models)
-        
-//     }
+    if (marks[3].selected) {
+        let newOptionMers1 = new Option ('BMW1', '1.5')
+        sel.append(newOptionMers1)
+        let newOptionMers2 = new Option ('BMW2', '2')
+        sel.append(newOptionMers2)
+    }   
+}
 
-
-// marks[1].addEventListener('option', modelSelect)
+modelsSelect.addEventListener('focus', optionSelect)
 button.addEventListener('click', calculate)
 
-
-// for (item of inputs ) {
-//     // console.log(item)
-//     item.addEventListener('input', function() {
-//         // console.log('change')
-//         calculate()
-//     })
-// }
-
-// for (item of selections ) {
-//     // console.log(item)
-//     item.addEventListener('change', function() {
-//         console.log('change')
-//         calculate()
-//     })
-// }
 

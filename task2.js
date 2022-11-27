@@ -9,9 +9,10 @@ const engine = document.querySelector('#engine')
 const result = document.querySelector('#result')
 
 //Options
-let marks = document.querySelectorAll('option[name="mark"]')
-let models = document.querySelectorAll('option[name="model"]')
+let marks = document.querySelectorAll('option[name="mark"]') // пусть останется, я в цикле обратилась через айди марк
+let models = document.querySelectorAll('option[name="model"]') // их как бы не существует при закоммитеных тегах в html
 let modelsSelect = document.querySelector('#sel')
+let markSel = document.querySelector('#mark')
 
 // Радиокнопки
 const radioFuel = document.querySelectorAll('input[name ="fuel"]')
@@ -28,7 +29,7 @@ function calculate() {
     let totalPrice = startPrice 
     document.querySelector('#result').innerHTML = ''
 
-    for (const option of marks) {
+    for (const option of markSel) {
         if (option.selected) {
             totalPrice = totalPrice * parseFloat(option.value) 
         }
@@ -96,6 +97,7 @@ function calculate() {
 
 
     // if (document.querySelector('#sel').options.selectedIndex == 1)
+
     // let selectedOption = sel.options[sel.selectedIndex]
     // console.log(selectedOption)
     // console.log(selectedOption.value)
@@ -103,13 +105,17 @@ function calculate() {
 
 
     const formatter = new Intl.NumberFormat('ru');
-    
-
     result.innerText = formatter.format(totalPrice)
     console.log(totalPrice)
 }
 
 function optionSelect() {
+    
+    // for (let i = 0; i < sel.length; i++ ) {
+    //     sel.remove(sel[i])
+    //     console.log(i)
+    // }
+    
         sel.remove(sel[0])
         sel.remove(sel[1])
         sel.remove(sel[2])

@@ -76,7 +76,7 @@
 // let arr = ["a", "b"];
 
 // arr.push(function() {
-//   console.log( arr );
+//   alert( arr );
 // });
 // // console.log(arr)
 // arr[2]()

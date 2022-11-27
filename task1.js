@@ -45,11 +45,24 @@ function goo() {
     
     function sort() {
         let sortMassiv = ' '
+
+        function sortMass(a, b) {
+            if (a > b) {
+            return 1;
+            }else if (b > a) {
+            return -1;
+            }else{
+            return 0;
+            }
+        }
+
+        arr.sort(sortMass);
         for (let i = 0; i <arr.length; i++) {
-            sortMassiv = arr.sort() + ''
-        }    
-        console.log(arr)
-        document.getElementById('sortMassiv').innerHTML = sortMassiv // здесь нет пробелов, а запятые        
+            sortMassiv += arr[i] + ' '
+        } 
+
+        // console.log(arr)
+        document.getElementById('sortMassiv').innerHTML = sortMassiv         
     }
 
     function sum() {

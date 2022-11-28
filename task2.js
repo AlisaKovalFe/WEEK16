@@ -105,7 +105,7 @@ function calculate() {
 
 
     const formatter = new Intl.NumberFormat('ru');
-    result.innerText = formatter.format(totalPrice)
+    result.innerText = formatter.format(totalPrice) + ' руб.'
     console.log(totalPrice)
 }
 
@@ -115,7 +115,7 @@ function optionSelect() {
     //     sel.remove(sel[i])
     //     console.log(i)
     // }
-    
+
         sel.remove(sel[0])
         sel.remove(sel[1])
         sel.remove(sel[2])
